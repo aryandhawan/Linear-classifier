@@ -33,15 +33,13 @@ y_pred=best_model.predict(x_test)
 print(f'Accuracy Score:{accuracy_score(y_true=y_test,y_pred=y_pred)}')
 print(f'Classification report: {classification_report(y_true=y_test,y_pred=y_pred)}')
 
-# Generate confusion matrix
 cm = confusion_matrix(y_test, y_pred)
 
-# Plot it
 plt.figure(figsize=(6,4))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=data.target_names, yticklabels=data.target_names)
 plt.xlabel('Predicted')
 plt.ylabel('Actual')
 plt.title('Confusion Matrix')
 plt.tight_layout()
-plt.savefig('confusion_matrix.png')  # Save it to include in GitHub
+plt.savefig('confusion_matrix.png')  
 plt.show()
